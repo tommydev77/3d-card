@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 1300px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: black;
+    align-items: center;
+    transform-style: preserve-3d;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: rgb(63, 63, 63);
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+}
+
+.box::before {
+    content: '3D';
+    position: absolute;
+    top: 0px;
+    transition: .9s;
+    left: 20px;
+    font-size: 8em;
+    font-weight: bold;
+    font-style: italic;
+    opacity: 0;
+    color: white;
+}
+
+.box:hover::before {
+    opacity: 0.04;
+    top: 30px;
+    left: 60px;
+}
+
+
+
+.box::after {
+    content: 'MARKET';
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 3.7em;
+    font-weight: bold;
+    font-style: italic;
+    opacity: 0;
+    color: white;
+    transition: .9s;
+}
+
+.box:hover::after {
+    opacity: 0.04;
+    bottom: 80px;
+}
+
+.name {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translate3d(0, 0, 75px);
+    transition: .6s;
+    z-index: 10;
+}
+
+.box:hover .name {
+    opacity: 1;
+    top: 10px;
+    padding: 20px 0;
+}
+
+.box .buy {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0, 75px);
+    border-radius: 20px;
+    background: black;
+    text-decoration: none;
+    padding: 10px 35px;
+    transition: .6s;
+    opacity: 0;
+}
+
+.buy a {
+    color: white;
+    text-decoration: none;
+}
+
+.box:hover .buy {
+    opacity: 1;
+    bottom: 35px;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: white;
+    z-index: 10;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px);
+}
+
+.product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 500px;
+    width: 230px;
+    transition: .5s;
+    z-index: 112;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px) rotate(10deg);
+}
+
+.box img {
+    width: 100%;
+    z-index: 1111;
+}
+
+.box:nth-child(1) .circle,
+.box:nth-child(1) .buy
+{
+    background: rgb(255, 0, 255);
+}
+
+.box:nth-child(1) .name {
+    color: rgb(255, 0, 255) !important;
+}
+
+.box:nth-child(2) .circle,
+.box:nth-child(2) .buy
+{
+    background: rgba(255, 38, 0, 0.856);
+}
+
+.box:nth-child(2) .name {
+    color: rgba(255, 38, 0, 0.856) !important;
+}
+
+
+
+.box:nth-child(3) .circle,
+.box:nth-child(3) .buy
+{
+    background: rgba(238, 222, 0, 0.856);
+}
+
+.box:nth-child(3) .name {
+    color: rgba(255, 38, 0, 0.856) !important;
+}
